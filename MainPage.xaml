@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Retirement.MainPage"
+             xmlns:vm="clr-namespace:Retirement.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:CountdownViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="Accent2">#369d71</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25"
+            BindingContext="{Binding RetirementTimeToGo}" 
+            Padding="30,0" 
+            VerticalOptions="StartAndExpand">
+            <Label
+                FontSize="36"
+                TextColor="{StaticResource Accent2}"
+                Text="{Binding Title}"
+                HorizontalOptions="StartAndExpand" />
+            <Label
+                FontSize="36"
+                TextColor="{StaticResource Accent2}"
+                Text="in:"
+                HorizontalOptions="StartAndExpand" />
+            <Label
+                FontSize="28"
+                TextColor="Black"
+                Text="{Binding}"
+                HorizontalOptions="StartAndExpand" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
